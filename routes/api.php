@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,34 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/**
+ * @Author related
+ */
+Route::get('authors','App\Http\Controllers\Api\UserController@index');
+Route::get('authors/{id}','App\Http\Controllers\Api\UserController@show');
+Route::get('posts/author/{id}','App\Http\Controllers\Api\UserController@posts');
+Route::get('comments/author/{id}','App\Http\Controllers\Api\UserController@comments');
+// End Author
+
+/**
+ * @Category related
+ */
+Route::get('categories','App\Http\Controllers\Api\CategoryController@index');
+Route::get('posts/category/{id}','App\Http\Controllers\Api\CategoryController@posts');
+// End Category
+
+/**
+ * @Post related
+ */
+Route::get('posts','App\Http\Controllers\Api\PostController@index');
+Route::get('posts/{id}','App\Http\Controllers\Api\PostController@show');
+Route::get('comments/post/{id}','App\Http\Controllers\Api\PostController@comments');
+// End Post
+
+/**
+ * @Comment related
+ */
+Route::get('comments','App\Http\Controllers\Api\CommentController@index');
+//Route::get('posts/{id}','App\Http\Controllers\Api\PostController@show');
+// End Comment
