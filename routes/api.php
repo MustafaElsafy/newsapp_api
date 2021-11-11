@@ -47,5 +47,4 @@ Route::get('comments/post/{id}','App\Http\Controllers\Api\PostController@comment
  * @Comment related
  */
 Route::get('comments','App\Http\Controllers\Api\CommentController@index');
-//Route::get('posts/{id}','App\Http\Controllers\Api\PostController@show');
 // End Comment
