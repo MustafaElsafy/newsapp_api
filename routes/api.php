@@ -48,3 +48,9 @@ Route::get('comments/post/{id}','App\Http\Controllers\Api\PostController@comment
  */
 Route::get('comments','App\Http\Controllers\Api\CommentController@index');
 // End Comment
+
+/**
+ * @Authentication related
+ */
+Route::post('register','App\Http\Controllers\Api\UserController@store');
+Route::post('token','App\Http\Controllers\Api\UserController@getToken');
